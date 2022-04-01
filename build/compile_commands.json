@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/hamzaian/dev/cpp/xtensor-other/xtensor-git-new/xtensor-git/build",
+  "command": "/usr/bin/c++   -I/home/hamzaian/dev/cpp/xtensor-other/xtensor-git-new/xtensor-git/Xtensor-test -I/home/hamzaian/dev/cpp/xtensor-other/xtensor-git-new/xtensor-git/vendor -I/home/hamzaian/dev/cpp/xtensor-other/xtensor-git-new/xtensor-git/vendor/xtensor/include -I/home/hamzaian/dev/cpp/xtensor-other/xtensor-git-new/xtensor-git/vendor/xtl/include   -std=c++17 -pthread -O2 -g -DNDEBUG   -std=gnu++17 -o CMakeFiles/Xtensor-test.dir/src/main.cpp.o -c /home/hamzaian/dev/cpp/xtensor-other/xtensor-git-new/xtensor-git/src/main.cpp",
+  "file": "/home/hamzaian/dev/cpp/xtensor-other/xtensor-git-new/xtensor-git/src/main.cpp"
+}
+]

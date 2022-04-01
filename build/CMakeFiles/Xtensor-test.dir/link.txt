@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++17 -pthread -O2 -g -DNDEBUG   CMakeFiles/Xtensor-test.dir/src/main.cpp.o  -o Xtensor-test 
