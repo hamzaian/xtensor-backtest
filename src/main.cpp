@@ -19,7 +19,7 @@ int main() {
     
     xt::xarray<double> res = xt::view(arr1, 0) + arr2;
     
-    std::cout << res;
+    std::cout << res << endl;
 
     ifstream in_file;
     in_file.open("AUD_USD_H1.csv");
@@ -31,5 +31,22 @@ int main() {
 
     xt::xarray<double> a = {{1,2,3,4}, {5,6,7,8}};
     xt::dump_csv(out_file, a);
+
+    xt::xarray<double> res2 = xt::pow(arr1, arr2);
+
+    std::cout << res2 << endl << endl;
+
+    // cout << "test\n";
+    // for (int j = 0; j<3; j++) {
+    //   for(int i; i<3; i++){
+    //     cout << res2(j,i) << endl;
+    // }
+    // }
+    // cout << "test\n";
+    // why doesn't this work???
+    
+  
+    cout << res2(0, 2) << endl;
+
 
 }
