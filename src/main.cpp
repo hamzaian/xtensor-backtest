@@ -19,11 +19,17 @@ int main() {
   
   xt::xarray<double> res = xt::view(arr1, 0) + arr2;
   
-  std::cout << res << endl;
+  std::cout << res << std::endl;
 
-  ifstream in_file;
-  in_file.open("AUD_USD_H1.csv");
-  auto data = xt::load_csv<double>(in_file);
+  // std::ifstream in_file;
+  // in_file.open("AUD_USD_H1_mod.csv");
+  // std::cout << " test\n";
+  // auto data = xt::load_csv<float>(in_file);
+  // std::cout << " test\n";
+
+  // cout << "test....................\n";
+  // cout << data << endl;
+  // cout << "test....................\n";
 
   // ofstream out_file;    this doesn't work for some reason
   // out_file("out.csv");  error: no match for call to ‘(std::ofstream {aka std::basic_ofstream<char>}) (const char [8])’
@@ -36,18 +42,29 @@ int main() {
 
   std::cout << res2 << endl << endl;
   
-  cout << "test....................\n";
-  for (int j = 0; j<3; j++) {
-    for(int i = 0; i<3; i++){
-      // cout << i << " " << j << " " << endl;
-      cout << res2(j,i) << endl;
-  }
-  }
-  cout << "test....................\n";
-  // why doesn't this work???
+  // cout << "test....................\n";
+  // for (int j = 0; j<3; j++) {
+  //   for(int i = 0; i<3; i++){
+  //     // cout << i << " " << j << " " << endl;
+  //     cout << res2(j,i) << endl;
+  // }
+  // }
+  // cout << "test....................\n";
   
 
-  cout << res2(0, 2) << endl;
+  // cout << res2(0, 2) << endl;
+
+  cout << "test....................\n";
+
+  xt::xarray<double> a0 = xt::zeros<double>({2, 3});
+  auto b0 = xt::full_like(a0, -987654321);
+
+  cout << a0 << endl;
+  cout << "test....................\n";
+  cout << b0 << endl;
+
+  xt::xarray<double> a1 = xt::ones<double>({20, 5});
+  
 
   return 0;
 
