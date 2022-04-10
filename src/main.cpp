@@ -4,6 +4,7 @@
 #include "xtensor/xarray.hpp"
 #include "xtensor/xio.hpp"
 #include "xtensor/xview.hpp"
+#include <xtensor/xfixed.hpp>
 
 
 #include <istream>
@@ -86,6 +87,8 @@ for(int i=0; i<r; i++){
 }
 cout << c0 << "\n\n";
 
+// xt:xarray<string> names = {};
+
 std::time_t result = std::time(nullptr);
 char* standard = asctime(std::localtime(&result));
 std::cout << std::asctime(std::localtime(&result)) <<"standard format\n" << 
@@ -97,6 +100,16 @@ cout << standard << std::endl;
 // cout << (*utc) << std::endl;
 //why doesn't this work????
 
+xt::xtensor_fixed<double, xt::xshape<2, 3>> f0 = {{1., 2., 3.}, {4., 5., 6.}};
+
+cout << f0 << std::endl;
+
+
+xt::xarray<double> h0 = {1., 2., 3., 4., 5., 6.};
+std::cout << h0 << std::endl;
+
+h0.reshape({2, 3});
+std::cout << h0 << std::endl;
 return 0;
 
 
