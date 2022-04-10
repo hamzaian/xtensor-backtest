@@ -16,17 +16,17 @@
 
 using namespace std;
 int main() {
-xt::xarray<double> arr1
-  {{1.0, 2.0, 3.0},
-    {2.0, 5.0, 7.0},
-    {2.0, 5.0, 7.0}};
+// xt::xarray<double> arr1
+//   {{1.0, 2.0, 3.0},
+//     {2.0, 5.0, 7.0},
+//     {2.0, 5.0, 7.0}};
 
-xt::xarray<double> arr2
-  {5.0, 6.0, 7.0};
+// xt::xarray<double> arr2
+//   {5.0, 6.0, 7.0};
 
-xt::xarray<double> res = xt::view(arr1, 0) + arr2;
+// xt::xarray<double> res = xt::view(arr1, 0) + arr2;
 
-std::cout << res << std::endl;
+// std::cout << res << std::endl;
 
 // std::ifstream in_file;
 // in_file.open("AUD_USD_H1_mod.csv");
@@ -77,6 +77,7 @@ cout << b0 << endl;
 int r = 20; int c = 5;
 xt::xarray<double> a1 = xt::ones<double>({r, c});
 
+a1.fill(-987654321.);
 // xt::xarray<double>::shape_type sh0 = {2, 3};
 auto c0 = xt::empty<double>({r, 1});
 // a0 is xt::xarray<double>
@@ -110,6 +111,16 @@ std::cout << h0 << std::endl;
 
 h0.reshape({2, 3});
 std::cout << h0 << std::endl;
+
+
+// python solution for rolling max
+// def max_rolling1(a, window,axis =1):
+//         shape = a.shape[:-1] + (a.shape[-1] - window + 1, window)
+//         strides = a.strides + (a.strides[-1],)
+//         rolling = np.lib.stride_tricks.as_strided(a, shape=shape, strides=strides)
+//         return np.max(rolling,axis=axis)
+// can look into converting this later
+
 return 0;
 
 
