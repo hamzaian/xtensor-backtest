@@ -1,4 +1,6 @@
 #include <iostream>
+#include <ctime>
+
 #include "xtensor/xarray.hpp"
 #include "xtensor/xio.hpp"
 #include "xtensor/xview.hpp"
@@ -37,14 +39,17 @@ std::cout << res << std::endl;
 
 // ofstream out_file;    this doesn't work for some reason
 // out_file("out.csv");  error: no match for call to ‘(std::ofstream {aka std::basic_ofstream<char>}) (const char [8])’
-ofstream out_file ("out.csv");
 
-xt::xarray<double> a = {{1,2,3,4}, {5,6,7,8}};
-xt::dump_csv(out_file, a);
 
-xt::xarray<double> res2 = xt::pow(arr1, arr2);
+// ofstream out_file ("out.csv");
 
-std::cout << res2 << endl << endl;
+// xt::xarray<double> a = {{1,2,3,4}, {5,6,7,8}};
+// xt::dump_csv(out_file, a);
+
+// xt::xarray<double> res2 = xt::pow(arr1, arr2);
+
+// std::cout << res2 << endl << endl;
+
 
 // cout << "test....................\n";
 // for (int j = 0; j<3; j++) {
@@ -76,7 +81,21 @@ auto c0 = xt::empty<double>({r, 1});
 // a0 is xt::xarray<double>
 
 cout << c0 << "\n\n";
+for(int i=0; i<r; i++){
+  c0(i,1) = 2*i;
+}
+cout << c0 << "\n\n";
 
+std::time_t result = std::time(nullptr);
+char* standard = asctime(std::localtime(&result));
+std::cout << std::asctime(std::localtime(&result)) <<"standard format\n" << 
+              result << " seconds since the Epoch\n";
+
+cout << standard << std::endl;
+
+// tm* utc = gmtime(&result);
+// cout << (*utc) << std::endl;
+//why doesn't this work????
 
 return 0;
 
