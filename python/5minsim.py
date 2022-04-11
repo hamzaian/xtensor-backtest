@@ -7,6 +7,8 @@ import numpy as np
 import pandas_datareader as web
 import pprint
 
+from datetime import datetime, timezone
+
 pair = "EUR_USD"
 granularity = "H4"
 print("****PAIR:"), print(pair)
@@ -309,6 +311,11 @@ def backtesting(row):
         open_trades.append(Trade(row))
     '''
 #----------------------------------------------------------------
+def seconds(a):
+    return a.timestamp() 
+
+    
+df_wt["time"] = df_wt["time"].apply(seconds)
 conv = df_wt.to_numpy(na_value = -987654321)
 print(conv)
 
@@ -316,8 +323,10 @@ print(type(conv))
 
 np.save("./convert.npy", conv)
 
-import os
-print(os.path.abspath("."))
+
+
+# import os
+# print(os.path.abspath("."))
 
 print ("333333333333333333333333333333333333333333333")
 df_wt.apply(backtesting, axis=1)
