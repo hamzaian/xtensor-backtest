@@ -314,6 +314,8 @@ print(conv)
 
 print(type(conv))
 
+np.save("convert.npy", conv)
+
 print ("333333333333333333333333333333333333333333333")
 df_wt.apply(backtesting, axis=1)
 
