@@ -15,6 +15,8 @@
 // #include "xtensor/xtensor.hpp"
 
 using namespace std;
+
+double rolling_min(xt::xarray<double>, int, int);
 int main() {
 // xt::xarray<double> arr1
 //   {{1.0, 2.0, 3.0},
@@ -123,5 +125,13 @@ std::cout << h0 << std::endl;
 
 return 0;
 
-
 }
+
+double rolling_min(xt::xarray<double> arr1, xt::xarray<double> arr2, int window, int out_col){
+  int s = (sizeof(arr1)/sizeof(arr1[0])) - 1 - window;
+  int e = (sizeof(arr1)/sizeof(arr1[0])) - 1;
+  for(s; s<e; s++){
+    
+
+  }
+};
