@@ -10,6 +10,7 @@
 #include <istream>
 #include <fstream>
 #include <xtensor/xcsv.hpp>
+#include <xtensor/xnpy.hpp>
 
 // #include "xtensor/xshape.hpp"
 // #include "xtensor/xtensor.hpp"
@@ -30,15 +31,16 @@ int main() {
 
 // std::cout << res << std::endl;
 
-// std::ifstream in_file;
-// in_file.open("AUD_USD_H1_mod.csv");
-// std::cout << " test\n";
-// auto data = xt::load_csv<float>(in_file);
-// std::cout << " test\n";
+std::ifstream in_file;
+in_file.open("./python/convert.npy");
+std::cout << " test\n";
+// auto data = xt::load_npy<float>(in_file);
+auto data = xt::load_npy<double>(in_file);
+std::cout << " test\n";
 
-// cout << "test....................\n";
-// cout << data << endl;
-// cout << "test....................\n";
+cout << "test....................\n";
+cout << data << endl;
+cout << "test....................\n";
 
 // ofstream out_file;    this doesn't work for some reason
 // out_file("out.csv");  error: no match for call to ‘(std::ofstream {aka std::basic_ofstream<char>}) (const char [8])’
@@ -131,7 +133,7 @@ double rolling_min(xt::xarray<double> arr1, xt::xarray<double> arr2, int window,
   int s = (sizeof(arr1)/sizeof(arr1[0])) - 1 - window;
   int e = (sizeof(arr1)/sizeof(arr1[0])) - 1;
   for(s; s<e; s++){
-    
+
 
   }
 };
