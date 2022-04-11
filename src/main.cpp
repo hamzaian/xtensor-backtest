@@ -35,7 +35,7 @@ std::ifstream in_file;
 in_file.open("./python/convert.npy");
 std::cout << " test\n";
 // auto data = xt::load_npy<float>(in_file);
-auto data = xt::load_npy<double>(in_file);
+auto data = xt::load_npy<float>(in_file);
 std::cout << " test\n";
 
 cout << "test....................\n";

@@ -314,9 +314,9 @@ def backtesting(row):
 def seconds(a):
     return a.timestamp() 
 
-    
+
 df_wt["time"] = df_wt["time"].apply(seconds)
-conv = df_wt.to_numpy(na_value = -987654321)
+conv = df_wt.to_numpy(dtype = float, na_value = -987654321)
 print(conv)
 
 print(type(conv))
